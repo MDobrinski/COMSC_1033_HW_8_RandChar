@@ -16,7 +16,7 @@ public class COMSC_1033_HW_8_RandChar {
 		}
 		char randomChar;
 
-		for (int i = 1; i <= 2000000; i++){
+		for (int i = 1; i <= 20000; i++){
 			letterCount[26]++;
 			randomChar = (char)MyRandoms.randomNumber(65, 90);
 			if ( randomChar >='A' && randomChar <='Z'){
@@ -87,8 +87,18 @@ public class COMSC_1033_HW_8_RandChar {
 			}
 		} // end of for loop
 
-
-
+		System.out.print("\n*************************************************"
+				+ "*******************************\n");
+		System.out.println("The number of each character that was generated is:");
+		
+		for (int k=1; k<=26; k++){
+			System.out.print((char)(k+64)+"'s = "+letterCount[k-1]+"\t");
+			if(k%5==0){
+				System.out.println();
+			}
+		}	
+		System.out.print("\nThe total number of characters generated is: "
+				+ letterCount[26]);
 	} //***************** END OF MAIN **********************
 
 } // ********** End of COMSC_1033_HW_8_RandChar class **********
