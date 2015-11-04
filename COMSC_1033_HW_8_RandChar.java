@@ -7,19 +7,23 @@
 public class COMSC_1033_HW_8_RandChar {
 
 	public static void main(String[] args) {
-		int[] letterCount = new int[29];	// array to count the occurrences
-																			// of each letter. index 0 - 28
-		letterCount[27]=0;	// set total of low errors to 0
-		letterCount[28]=0;	// set total of high errors to 0
-		for (int k = 0; k<=26; k++){
+		int[] letterCount = new int[27];	// array to count the occurrences
+                                      // of each letter. index 0 - 26
+
+		for (int k = 0; k<=26; k++){ // Fill the array with zeros just in case.
 			letterCount[k]=0;
 		}
-		char randomChar;
+		char randomChar; // Hold the randomly generated character
+/*
+ * This for loop generates a number of random characters and counts the number
+ * of times each character is generated storing the count in the array
+ * letterCount. The total number of generated characters is stored in
+ * array element 26 (the last element in the array).
+ */
 
-		for (int i = 1; i <= 20000; i++){
-			letterCount[26]++;
+		for (int i = 1; i <= 26; i++){
+			letterCount[26]++;								// Total character count
 			randomChar = (char)MyRandoms.randomNumber(65, 90);
-			if ( randomChar >='A' && randomChar <='Z'){
 				System.out.print(randomChar + " ");
 				if (i%40 == 0){
 					System.out.println();
@@ -77,28 +81,24 @@ public class COMSC_1033_HW_8_RandChar {
 						break;
 					case 'Z': letterCount[25]++;
 						break;
-				}
-			}
-			else if (randomChar < 'A'){
-				letterCount[27]++;		// increment low error count
-			}
-			else {
-				letterCount[28]++;		// increment high error count
-			}
-		} // end of for loop
+				} // End of switch
+
+		} // End of for loop
 
 		System.out.print("\n*************************************************"
 				+ "*******************************\n");
 		System.out.println("The number of each character that was generated is:");
-		
+/*
+ * This for loop outputs the array containing the character totals.
+ */
 		for (int k=1; k<=26; k++){
 			System.out.print((char)(k+64)+"'s = "+letterCount[k-1]+"\t");
 			if(k%5==0){
 				System.out.println();
 			}
-		}	
+		}
 		System.out.print("\nThe total number of characters generated is: "
-				+ letterCount[26]);
+				+ letterCount[26]); // Output the total number of characters
 	} //***************** END OF MAIN **********************
 
 } // ********** End of COMSC_1033_HW_8_RandChar class **********
