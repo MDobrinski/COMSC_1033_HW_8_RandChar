@@ -444,7 +444,7 @@ $
 
 This project allowed for the use of both methods and loops to control the program.
 Generating a larger number of random characters and keeping a count of each character
-shows that the Java random number method generates a fairly even distribution characters
+shows that the Java random number method generates a fairly even distribution of characters
 generated.
 
 
