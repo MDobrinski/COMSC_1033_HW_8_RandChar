@@ -21,7 +21,7 @@ public class COMSC_1033_HW_8_RandChar {
  * array element 26 (the last element in the array).
  */
 
-		for (int i = 1; i <= 26; i++){
+		for (int i = 1; i <= 20000000; i++){
 			letterCount[26]++;								// Total character count
 			randomChar = (char)MyRandoms.randomNumber(65, 90);
 				System.out.print(randomChar + " ");
